@@ -1,20 +1,68 @@
-/* Empty. Add your own CSS if you like */
+body {
+    cursor: url('http://ionicframework.com/img/finger.png'), auto;
+}
 
-body{
-    background-color: #007aff;
+.background, .background .pane, .background .item-complex .item-content {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2590e8+0,459ae0+23,76d3d2+49,459ae0+82,2590e8+100 */
+    background: #2590e8; /* Old browsers */
+    background: -moz-linear-gradient(top,  #2590e8 0%, #459ae0 23%, #76d3d2 49%, #459ae0 82%, #2590e8 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2590e8), color-stop(23%,#459ae0), color-stop(49%,#76d3d2), color-stop(82%,#459ae0), color-stop(100%,#2590e8)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #2590e8 0%,#459ae0 23%,#76d3d2 49%,#459ae0 82%,#2590e8 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #2590e8 0%,#459ae0 23%,#76d3d2 49%,#459ae0 82%,#2590e8 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #2590e8 0%,#459ae0 23%,#76d3d2 49%,#459ae0 82%,#2590e8 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #2590e8 0%,#459ae0 23%,#76d3d2 49%,#459ae0 82%,#2590e8 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2590e8', endColorstr='#2590e8',GradientType=0 ); /* IE6-9 */
+
 }
-.form-box label{
-    margin-bottom: 15px;
+.login-form .card .item.item-input input, .list-inset .item.item-input input, .padding-horizontal>.list .item.item-input input, .padding>.list .item.item-input input{
+    text-align: center;
+    font-size: 16px;
 }
-.form-box .item-select{
-    height: 43px;
+.login-form .list-inset{
+    margin: 16px 10px;
 }
-.form-box input, .form-box select{
-    padding-left: 5px;
+.login-form .placeholder-icon {
+    color: #585757;
+    font-size: 20px;
 }
-.form-box .button-bar .button{
-    line-height: 21px;
-    padding: 10px 0px 0px 0px;
-    margin-right: 4px;
-    border: 1px solid #ddd;
+.custom-radio .radio-icon{
+    display: none;
+}
+.custom-radio .item-radio{
+    border: 0px;
+}
+.custom-radio .item-radio .item-content{
+    padding: 10px;
+    background-color: transparent;
+}
+.custom-radio .item-radio .item-content strong{
+    font-size: 22px;
+    font-weight: 800;
+}
+.custom-radio .item-radio input:checked+.radio-content .item-content{
+    background-color: transparent;
+    color: #fff;
+    -moz-box-shadow:    inset 0 0 12px #505050;
+    -webkit-box-shadow: inset 0 0 12px #505050;
+    box-shadow:         inset 0 0 12px #505050;
+}
+.pink-bg .radio-content{
+    background-color: #CF2454;
+}
+.green-bg .radio-content{
+    background-color: #5FCF23;
+}
+.purple-bg .radio-content{
+    background-color: #9424CE;
+}
+
+.custom-radio p{
+    line-height: 17px;
+    color: #fff;
+}
+.login-form .item-input{
+    padding: 0px 0px 0px 16px;
+}
+.login-form .button.button-positive{
+    background-color: #06447D;
 }

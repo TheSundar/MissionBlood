@@ -5,19 +5,19 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-
+    <!--<link href="lib/ionic/css/ionic.css" rel="stylesheet">-->
+    <link href="http://code.ionicframework.com/nightly/css/ionic.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+    <!--<link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">-->
 
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">-->
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
@@ -31,83 +31,105 @@
     <!-- your app's js -->
     <script src="js/app.js"></script>
 </head>
-<body ng-app="starter">
 
+<body ng-controller="ContentController">
 
-<ion-side-menus ng-controller="ContentController">
+<ion-view title="Sign-In" class="background">
+    <ion-content class="padding">
+        <form class="login-form padding">
 
-    <!-- Center content -->
-    <ion-side-menu-content>
+            <div class="row">
+                <div class="col text-center">
+                    <img src="http://red-team-design.com/wp-content/uploads/2010/10/rtd-img.png" alt="Location"
+                         style="width: 200px;">
 
-        <ion-content>
-            {{ username }}
-            <form class="form-box">
-                <div class="list list-inset">
-                <label class="item item-input ion-ios-person">
-                    <input type="text" placeholder="username" required ng-model="username">
-                </label>
-                <label class="item item-input ion-ios-telephone">
-                    <input type="text" placeholder="Phone Number" required ng-model="phn_no">
-                </label>
-                <label class="item item-input item-select ion-waterdrop">
-
-                    <select required ng-model="blood_group">
-                        <option>A+</option>
-                        <option selected>B+</option>
-                        <option>O+</option>
-                    </select>
-                </label>
-
-                <label class="item item-input ion-ios-body">
-                    <input type="text" placeholder="Age" ng-model="age">
-                </label>
-
-                <div class ='row'>
-                    <div class="button-bar">
-                        <a class="button " ng-click="last_donated(1)"><h3>1</h3><small>Months<br>Back</small></a>
-                        <a class="button" ng-click="last_donated(3)"><h3>3</h3><small>Months<br>Back</small></a>
-                        <a class="button" ng-click="last_donated(6)"><strong>6</strong><small>Months<br>Back</small></a>
-                    </div>
-
-                    <!--<div class="col-xs-4" ng-click="last_donated(1)">-->
-                        <!--1 Month Back-->
-                    <!--</div>-->
-                    <!--<div class="col-xs-4" ng-click="last_donated(3)">-->
-                        <!--3 Month Back-->
-                    <!--</div>-->
-                    <!--<div class="col-xs-4" ng-click="last_donated(6)">-->
-                        <!--6 Month Back-->
-                    <!--</div>-->
-
+                    <p><strong>LOGO</strong></p>
                 </div>
 
-                <br>
-                <label class="item item-input ion-location">
-                    <input type="text" placeholder="Location" ng-model="location">
+            </div>
+
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <i class="icon ion-person placeholder-icon"></i>
+                    <input type="text" placeholder="Name">
                 </label>
+            </div>
+
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <i class="icon ion-ios-telephone placeholder-icon"></i>
+                    <input type="text" placeholder="Phone Number">
+                </label>
+            </div>
+
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <i class="icon ion-waterdrop placeholder-icon" style="color: #F91F1F;"></i>
+                    <input type="text" placeholder="Blood Group">
+                </label>
+            </div>
+
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <i class="icon ion-ios-body placeholder-icon"></i>
+                    <input type="text" placeholder="Age">
+                </label>
+            </div>
 
 
+            <div class="text-center">
+                <h3 class="stable">Last Donated</h3>
+            </div>
+            <div class="row text-center custom-radio">
+
+                <div class="col col-33 pink-bg">
+                    <ion-radio ng-model="choice" ng-value="1">
+                        <p><strong>1</strong><br>
+                            <small>Month <br> Back</small>
+                        </p>
+                    </ion-radio>
+                </div>
+                <div class="col col-33 green-bg">
+                    <ion-radio ng-model="choice" ng-value="3">
+                        <p><strong>3</strong><br>
+                            <small>Months <br> Back</small>
+                        </p>
+                    </ion-radio>
+                </div>
+                <div class="col col-33 purple-bg">
+                    <ion-radio ng-model="choice" ng-value="6">
+                        <p><strong>6</strong><br>
+                            <small>Months <br> Back</small>
+                        </p>
+                    </ion-radio>
+                </div>
+            </div>
 
 
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <i class="icon ion-location placeholder-icon"></i>
+                    <input type="text" placeholder="Location">
+                </label>
+            </div>
 
-                    <button class="button button-block button-positive icon-left ion-home">
-                        Login
-                    </button>
-                <!--<button type="button" class="btn btn-primary">SignUp</button>-->
-                <!--<button type="submit" class="btn btn-default">Sign in</button>-->
-                    </div>
-            </form>
+            <div class="row">
+                <div class="col text-center">
+                    <img src="http://static1.squarespace.com/static/5509d84ee4b01b04fc160992/t/559ff111e4b047c74c5f0a4a/1436545298391/"
+                         alt="Location" style="width: 100px;">
+                </div>
 
-        </ion-content>
-    </ion-side-menu-content>
+            </div>
 
-    <!-- Left menu -->
-    <ion-side-menu side="left">
-        <ion-header-bar class="bar-dark">
-            <h1 class="title">Projects</h1>
-        </ion-header-bar>
-    </ion-side-menu>
 
-</ion-side-menus>
+            <div class="padding">
+                <button class="button button-block button-positive ion-log-in">
+                    Login
+                </button>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>
+
 </body>
 </html>
